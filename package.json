@@ -1,7 +1,7 @@
 {
   "name": "meme-scraper",
   "version": "1.0.0",
-  "type": "version",
+  "type": "module",
   "main": "index.js",
   "repository": "git@github.com:Wantaiq/meme-scraper.git",
   "author": "Filip <filipdopa@yahoo.com>",
@@ -40,5 +40,9 @@
     "eslint-plugin-react": "7.29.4",
     "eslint-plugin-react-hooks": "4.5.0",
     "@typescript-eslint/utils": "5.22.0"
+  },
+  "dependencies": {
+    "got": "^12.0.4",
+    "jsdom": "^19.0.0"
   }
 }
