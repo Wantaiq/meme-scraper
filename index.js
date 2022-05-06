@@ -51,7 +51,6 @@ async function makeDir() {
   }
 }
 fetchUrls()
+  .then(makeDir())
   .then((imgUrls) => fetchImages(imgUrls))
   .catch(console.log(''));
-
-makeDir().catch(console.log(''));
