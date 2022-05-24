@@ -26,17 +26,17 @@ function fetchImages(urls) {
 async function fetchUrls() {
   const url = 'https://memegen-link-examples-upleveled.netlify.app/';
   try {
-    const res = await fetch(url);
-    const data = await res.text();
+    const response = await fetch(url);
+    const data = await response.text();
 
     const parsedHtml = cheerio.load(data, null, false);
-    const imgData = parsedHtml('a');
-    const imgSrc = Object.values(imgData)
+    const imageData = parsedHtml('a');
+    const imageSrc = Object.values(imageData)
       .map((item) => item.attribs)
       .slice(6, 16)
       .map((el) => el.href);
 
-    const imageUrl = imgSrc.map((item) => item.slice(30));
+    const imageUrl = imageSrc.map((item) => item.slice(30));
     return imageUrl;
   } catch (err) {
     console.log(err);
